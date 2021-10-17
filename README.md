@@ -1,6 +1,6 @@
 # katalkhae
 
-카톡해 프로젝트
+카톡해 프로젝트2s
 깃 테스트
 
 ## Getting Started

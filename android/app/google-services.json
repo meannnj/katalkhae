@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "232468507547",
+    "project_id": "katalkhae-yo",
+    "storage_bucket": "katalkhae-yo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232468507547:android:873e8925f1eb0ca7834f3e",
+        "android_client_info": {
+          "package_name": "com.example.katalkhae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232468507547-jifesi5l5n5lee3je1g2jdek4gd4h57k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVtr7rUkm5ngmza9XS79ih6ZE-m1rKs5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232468507547-jifesi5l5n5lee3je1g2jdek4gd4h57k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

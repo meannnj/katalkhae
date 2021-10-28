@@ -19,7 +19,7 @@ class Bottom extends StatelessWidget {
                   Icons.format_list_bulleted_sharp,
                   size: 18),
               child: Text(
-                '해석아이템',
+                '해석하기',
                 style: TextStyle(
                     fontSize: 9
                 ),

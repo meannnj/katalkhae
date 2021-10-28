@@ -1,5 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+//파이어베이스 연동시
+//import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 //import 'package:katalkhae/screens/item_screen.dart';
 import 'package:katalkhae/screens/item_a.dart';
@@ -13,11 +15,14 @@ import 'package:katalkhae/widget/bottom_bar.dart';
 //   runApp(MyApp());
 // }
 
-Future<void> main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
+
+//파이어 베이스 연동시
+// Future<void> main() async{
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -70,6 +75,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// 파이어베이스 연동시
 // class HomeScreen extends StatelessWidget {
 //   //const HomeScreen({Key? key}) : super(key: key);
 //   final Stream<QuerySnapshot> katalkBook = FirebaseFirestore.instance.collection('katalkBook').snapshots();

@@ -15,47 +15,31 @@ class Bottom extends StatelessWidget {
           indicatorColor: Colors.transparent,
           tabs: [
             Tab(
-              icon: Icon(
-                  Icons.format_list_bulleted_sharp,
-                  size: 18),
+              icon: Icon(Icons.format_list_bulleted_sharp, size: 18),
               child: Text(
                 '해석하기',
-                style: TextStyle(
-                    fontSize: 9
-                ),
+                style: TextStyle(fontSize: 9),
               ),
             ),
             Tab(
-              icon: Icon(
-                  Icons.messenger_outline_sharp,
-                  size: 18),
+              icon: Icon(Icons.messenger_outline_sharp, size: 18),
               child: Text(
-               '해석결과',
-                style: TextStyle(
-                    fontSize: 9
-                ),
+                '해석결과',
+                style: TextStyle(fontSize: 9),
               ),
             ),
             Tab(
-              icon: Icon(
-                  Icons.favorite_border_sharp,
-                  size: 18),
+              icon: Icon(Icons.favorite_border_sharp, size: 18),
               child: Text(
                 '메모리박스',
-                style: TextStyle(
-                    fontSize: 9
-                ),
+                style: TextStyle(fontSize: 9),
               ),
             ),
             Tab(
-              icon: Icon(
-                  Icons.settings,
-                  size: 18),
+              icon: Icon(Icons.settings, size: 18),
               child: Text(
                 '설정',
-                style: TextStyle(
-                    fontSize: 9
-                ),
+                style: TextStyle(fontSize: 9),
               ),
             ),
           ],

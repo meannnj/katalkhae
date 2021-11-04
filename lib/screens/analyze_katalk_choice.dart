@@ -118,6 +118,7 @@ class ItemA extends StatelessWidget {
                                       ),
                                     ),
                                     Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         TextButton(
                                           onPressed: () {
@@ -127,21 +128,35 @@ class ItemA extends StatelessWidget {
                                                 firstDate: DateTime(2020),
                                                 lastDate: DateTime(2030));
                                           },
-                                          child: const Text('11111111'),
+                                          child: const Text('2018-01-01'),
                                           style: TextButton.styleFrom(
-                                            textStyle: TextStyle(
-                                              fontSize: 30,
+                                            textStyle: const TextStyle(
+                                              fontSize: 20,
                                               color: Colors.blue
                                             )
                                           ),
                                         ),
                                         Text('-',
                                           style: TextStyle(
-                                            fontSize: 10
+                                            fontSize: 40,
+                                            fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         TextButton(
-                                            onPressed: (){}, child: const Text('222222222')
+                                          onPressed: () {
+                                            Future<DateTime?> future = showDatePicker(
+                                                context: context,
+                                                initialDate: DateTime.now(),
+                                                firstDate: DateTime(2020),
+                                                lastDate: DateTime(2030));
+                                          },
+                                          child: const Text('2020-01-01'),
+                                          style: TextButton.styleFrom(
+                                              textStyle: const TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.blue
+                                              )
+                                          ),
                                         ),
                                       ],
                                     )

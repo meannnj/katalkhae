@@ -26,7 +26,7 @@ class _ItemScreenState extends State<ItemScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
                   child: Text(
                     '카톡해',
                     style: TextStyle(
@@ -40,14 +40,28 @@ class _ItemScreenState extends State<ItemScreen> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        // border: Border.all(
-                        //   color: Colors.red,
-                        // ),
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ItemA()),
+                        );},
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: const Size(390, 50),
+                        primary: Colors.white, // background
+                        //onPrimary: Palette.mainColor, //foreground
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
                       ),
+                      // decoration: const BoxDecoration(
+                      //   color: Colors.white,
+                      //   // border: Border.all(
+                      //   //   color: Colors.red,
+                      //   // ),
+                      //   borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      // ),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -57,14 +71,14 @@ class _ItemScreenState extends State<ItemScreen> {
                             ),
                             child: Image.asset(
                               'images/item1.png',
-                              fit: BoxFit.fill,
+                              fit: BoxFit.fitWidth,
                             ),
                           ),
                           const SizedBox(
                             height: 10.0,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.only(top:5,bottom:5, left:15,right:15),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -122,7 +136,7 @@ class _ItemScreenState extends State<ItemScreen> {
                                       ),
                                       child: const Text('카톡 해석하기')),
                                   const SizedBox(
-                                    height: 10.0,
+                                    height: 15,
                                   ),
                                 ]),
                           ),

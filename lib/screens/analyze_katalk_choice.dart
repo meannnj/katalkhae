@@ -15,117 +15,171 @@ class ItemA extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('카톡 해석하기',
+          title: const Text(
+            '카톡 해석하기',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           elevation: 0.0,
           backgroundColor: Palette.backgroundColor,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top:0, left:20, right:20),
+          padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(
                 height: 10.0,
               ),
-              const Text(
-                  '해석할 카카오톡 대화를 선택해주세요.',
+              const Text('해석할 카카오톡 대화를 선택해주세요.',
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                  )
-              ),
+                  )),
               const SizedBox(
                 height: 10.0,
               ),
               Container(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
-                  child: ElevatedButton(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget> [
-                        Text('김민제님과의 카톡 대화',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            )
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const <Widget>[
+                            Text('김민제님과의 카톡 대화',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text('저장한 날짜: 2021. 10. 01 오후 7:42',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 10,
+                                )),
+                          ],
                         ),
-                        SizedBox(
-                          height: 5.0,
+                        onPressed: () async {
+                          final result = await FilePicker.platform.pickFiles();
+                          if (result == null) return;
+                          final file = result.files.first;
+                        },
+                        style: ElevatedButton.styleFrom(
+                          //primary: Colors.black,
+                          minimumSize: const Size(390, 70),
+                          primary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            //side: BorderSide(color: Colors.red)
+                          ),
                         ),
-                        Text('저장한 날짜: 2021. 10. 01 오후 7:42',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 10,
-                            )
-                        ),
-                      ],
-                    ),
-
-                    onPressed: () async {
-                      log('체크_1');
-
-                      final result = await FilePicker.platform.pickFiles();
-                      if(result == null) return;
-
-                      final file = result.files.first;
-                      //1111
-                      //openFile(file);
-
-
-                      //var result = await _requestPermission();
-                      //log('result, $result');
-                      //var dir = await getApplicationDocumentsDirectory();
-                      //var file = await File('/storage/emulated/0/KakaoTalk/Chats/KakaoTalk_Chats_2021-11-01_20.43.20_-1107574475/KakaoTalkChats.txt').readAsString();
-                      log('체크_2');
-                    },
-
-                    // onPressed: () {
-                    //   showDialog<String>(
-                    //     context: context,
-                    //     builder: (BuildContext context) => AlertDialog(
-                    //       title: const Text('AlertDialog'),
-                    //       content: const Text('완료 상태를 바꾸시겠습니까?'),
-                    //       actions: <Widget>[
-                    //         TextButton(
-                    //           onPressed: () => Navigator.of(context).pop(),
-                    //           child: const Text('No'),
-                    //         ),
-                    //         TextButton(
-                    //           onPressed: () {
-                    //             Navigator.of(context).pop();
-                    //           },
-                    //           child: const Text('Yes'),
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   );
-                    // },
-                    style: ElevatedButton.styleFrom(
-                      //primary: Colors.black,
-                      minimumSize: const Size(390,70),
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        //side: BorderSide(color: Colors.red)
                       ),
-                    ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      ElevatedButton(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const <Widget>[
+                            Text('임시 분석시작 버튼',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ],
+                        ),
+                          onPressed: () {
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('김민제님과의 카카오톡 대화',
+                                      style: TextStyle(
+                                        fontSize: 25
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 7,
+                                    ),
+                                    Text('기간을 선택해주세요',
+                                      style: TextStyle(
+                                          fontSize: 10
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Future<DateTime?> future = showDatePicker(
+                                                context: context,
+                                                initialDate: DateTime.now(),
+                                                firstDate: DateTime(2020),
+                                                lastDate: DateTime(2030));
+                                          },
+                                          child: const Text('11111111'),
+                                          style: TextButton.styleFrom(
+                                            textStyle: TextStyle(
+                                              fontSize: 30,
+                                              color: Colors.blue
+                                            )
+                                          ),
+                                        ),
+                                        Text('-',
+                                          style: TextStyle(
+                                            fontSize: 10
+                                          ),
+                                        ),
+                                        TextButton(
+                                            onPressed: (){}, child: const Text('222222222')
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () => Navigator.of(context).pop(),
+                                    child: const Text('No'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: const Text('Yes'),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        style: ElevatedButton.styleFrom(
+                          //primary: Colors.black,
+                          minimumSize: const Size(390, 70),
+                          primary: Colors.deepPurpleAccent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            //side: BorderSide(color: Colors.red)
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               )
             ],
           ),
-        )
-    );
+        ));
   }
-//22222
-//void openFile
 
 /*Future<bool> checkIfPermissionGranted() async{
     Map<Permission, PermissionStatus> statuses = await [

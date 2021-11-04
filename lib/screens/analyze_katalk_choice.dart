@@ -7,106 +7,127 @@ import 'dart:developer';
 import 'dart:io';
 
 class ItemA extends StatelessWidget {
-  ItemA({Key? key}) : super(key: key);
+  const ItemA({Key? key}) : super(key: key);
 
-  //GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
-
-  /*Future<bool>_checkPermission() async {
-    var status = await Permission.storage.status;
-    return status == PermissionStatus.granted ? true : false;
-  }
-
-  Future<bool> _requestPermission() async {
-    Map<Permission, PermissionStatus> statues =await [Permission.storage].request();
-    return statues[Permission.storage] == PermissionStatus.granted ? true : false;
-  }*/
+  //const ScreenA({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //key: _key,
         appBar: AppBar(
-          title: const Text(
-            '카톡 해석하기',
+          title: const Text('카톡 해석하기',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           elevation: 0.0,
           backgroundColor: Palette.backgroundColor,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
+          padding: const EdgeInsets.only(top:0, left:20, right:20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(
                 height: 10.0,
               ),
-              const Text('해석할 카카오톡 대화를 선택해주세요.',
+              const Text(
+                  '해석할 카카오톡 대화를 선택해주세요.',
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                  )),
+                  )
+              ),
               const SizedBox(
                 height: 10.0,
               ),
-              OutlinedButton(
+              Container(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const <Widget>[
-                      Text('김민제님과의 카톡 대화',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      SizedBox(
-                        height: 5.0,
+                  child: ElevatedButton(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget> [
+                        Text('김민제님과의 카톡 대화',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )
+                        ),
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        Text('저장한 날짜: 2021. 10. 01 오후 7:42',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 10,
+                            )
+                        ),
+                      ],
+                    ),
+
+                    onPressed: () async {
+                      log('체크_1');
+
+                      final result = await FilePicker.platform.pickFiles();
+                      if(result == null) return;
+
+                      final file = result.files.first;
+                      //1111
+                      //openFile(file);
+
+
+                      //var result = await _requestPermission();
+                      //log('result, $result');
+                      //var dir = await getApplicationDocumentsDirectory();
+                      //var file = await File('/storage/emulated/0/KakaoTalk/Chats/KakaoTalk_Chats_2021-11-01_20.43.20_-1107574475/KakaoTalkChats.txt').readAsString();
+                      log('체크_2');
+                    },
+
+                    // onPressed: () {
+                    //   showDialog<String>(
+                    //     context: context,
+                    //     builder: (BuildContext context) => AlertDialog(
+                    //       title: const Text('AlertDialog'),
+                    //       content: const Text('완료 상태를 바꾸시겠습니까?'),
+                    //       actions: <Widget>[
+                    //         TextButton(
+                    //           onPressed: () => Navigator.of(context).pop(),
+                    //           child: const Text('No'),
+                    //         ),
+                    //         TextButton(
+                    //           onPressed: () {
+                    //             Navigator.of(context).pop();
+                    //           },
+                    //           child: const Text('Yes'),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   );
+                    // },
+                    style: ElevatedButton.styleFrom(
+                      //primary: Colors.black,
+                      minimumSize: const Size(390,70),
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        //side: BorderSide(color: Colors.red)
                       ),
-                      Text('저장한 날짜: 2021. 10. 01 오후 7:42',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 10,
-                          )),
-                    ],
-                  ),
-                ),
-                onPressed: () async {
-                  log('체크_1');
-
-                  final result = await FilePicker.platform.pickFiles();
-                  if(result == null) return;
-
-                  final file = result.files.first;
-                  openFile(file);
-                  //var result = await _requestPermission();
-                  //log('result, $result');
-                  //var dir = await getApplicationDocumentsDirectory();
-                  //var file = await File('/storage/emulated/0/KakaoTalk/Chats/KakaoTalk_Chats_2021-11-01_20.43.20_-1107574475/KakaoTalkChats.txt').readAsString();
-                  log('체크_2');
-                },
-                style: OutlinedButton.styleFrom(
-                  //primary: Colors.black,
-                  minimumSize: const Size(390, 40),
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    //side: BorderSide(color: Colors.red)
+                    ),
                   ),
                 ),
               )
             ],
           ),
-        ));
+        )
+    );
   }
+//22222
+//void openFile
 
-  void openFile
-
-  /*Future<bool> checkIfPermissionGranted() async{
+/*Future<bool> checkIfPermissionGranted() async{
     Map<Permission, PermissionStatus> statuses = await [
       Permission.storage,
       Permission.camera

@@ -122,16 +122,30 @@ class _ItemScreenState extends State<ItemScreen> {
                                       ),
                                       child: const Text('카톡 해석하기')),
                                   const SizedBox(
-                                    height: 15.0,
+                                    height: 10.0,
                                   ),
                                 ]),
                           ),
                         ],
                       ),
                     ),
+
                     const SizedBox(
-                      height: 20.0,
+                      height: 15.0,
                     ),
+
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: const Text('계속 업로드 예정입니다. :)'),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(390,50),
+                        primary: Colors.white, // background
+                        onPrimary: Palette.mainColor, //foreground
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                      ),
+                    )
+
                   ],
                 )
               ],

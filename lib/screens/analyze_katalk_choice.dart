@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:katalkhae/config/palette.dart';
+import 'package:katalkhae/helpers/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:katalkhae/widget/date_choice_dialog.dart';
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 
-class ItemA extends StatelessWidget {
-  const ItemA({Key? key}) : super(key: key);
+class KatalkChoice extends StatelessWidget {
+  const KatalkChoice({Key? key}) : super(key: key);
+
+  String get currentDate => DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+  String get beforeOneYearDate =>
+      DateFormat('yyyy-MM-dd')
+          .format(DateTime.now().subtract(Duration(days: 365)));
 
   //const ScreenA({ Key? key }) : super(key: key);
 
@@ -97,86 +106,13 @@ class ItemA extends StatelessWidget {
                                 )),
                           ],
                         ),
-                          onPressed: () {
-                            showDialog<String>(
-                              context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                title: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('김민제님과의 카카오톡 대화',
-                                      style: TextStyle(
-                                        fontSize: 25
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 7,
-                                    ),
-                                    Text('기간을 선택해주세요',
-                                      style: TextStyle(
-                                          fontSize: 10
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Future<DateTime?> future = showDatePicker(
-                                                context: context,
-                                                initialDate: DateTime.now(),
-                                                firstDate: DateTime(2020),
-                                                lastDate: DateTime(2030));
-                                          },
-                                          child: const Text('2018-01-01'),
-                                          style: TextButton.styleFrom(
-                                            textStyle: const TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.blue
-                                            )
-                                          ),
-                                        ),
-                                        Text('-',
-                                          style: TextStyle(
-                                            fontSize: 40,
-                                            fontWeight: FontWeight.bold
-                                          ),
-                                        ),
-                                        TextButton(
-                                          onPressed: () {
-                                            Future<DateTime?> future = showDatePicker(
-                                                context: context,
-                                                initialDate: DateTime.now(),
-                                                firstDate: DateTime(2020),
-                                                lastDate: DateTime(2030));
-                                          },
-                                          child: const Text('2020-01-01'),
-                                          style: TextButton.styleFrom(
-                                              textStyle: const TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.blue
-                                              )
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () => Navigator.of(context).pop(),
-                                    child: const Text('No'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: const Text('Yes'),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                        onPressed: () {
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) =>
+                                 CalendarDialog()
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           //primary: Colors.black,
                           minimumSize: const Size(390, 70),
@@ -195,72 +131,4 @@ class ItemA extends StatelessWidget {
           ),
         ));
   }
-
-/*Future<bool> checkIfPermissionGranted() async{
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.storage,
-      Permission.camera
-    ].request();
-
-    bool permitted = true;
-
-    statuses.forEach((permission, permissionStatus) {
-      if(!permissionStatus.isGranted) {
-        permitted = false;
-      }
-    });
-
-    return permitted;
-  }*/
 }
-
-/*//화일에 내용을 쓴다.
-void writeCountFile(int count) async {
-  var dir = await getApplicationDocumentsDirectory();
-  File(dir.path + '/count.txt').writeAsStringSync(count.toString());
-}
-
-//화일을 읽어온다.
-void readCountFile() async {
-  //읽어올 파일을 지정한다.
-  try {
-    var dir = await getApplicationDocumentsDirectory();
-    var file = await File(dir.path + '/count.txt').readAsString();
-    print(file);
-  } catch (e) {
-    print(e.toString());
-  }
-}
-
-Future<String> callPermissions() async {
-  Map<Permission, PermissionStatus> statuses = await [
-    Permission.location,
-    Permission.storage,
-  ].request();
-
-  if (statuses.values.every((element) => element.isGranted)) {
-    return 'success';
-  }
-
-  return 'failed';
-}*/
-
-/*
-if(await checkIfPermissionGranted()){
-SnackBar snackBar = SnackBar(content: Text('전부허용'));
-_key.currentState!.showSnackBar(snackBar);
-log('허용됨');
-}
-else{
-SnackBar snackBar = SnackBar(
-content: Text('전부허용안됨'),
-action: SnackBarAction(
-label: "go to settings",
-onPressed: () {
-_key.currentState!.hideCurrentSnackBar();
-AppSettings.openAppSettings();
-},
-));
-_key.currentState!.showSnackBar(snackBar);
-log('허용안됨');
-}*/

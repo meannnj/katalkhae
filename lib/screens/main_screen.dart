@@ -45,7 +45,7 @@ class _ItemScreenState extends State<ItemScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ItemA()),
+                              builder: (context) => KatalkChoice()),
                         );},
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero,
@@ -121,7 +121,7 @@ class _ItemScreenState extends State<ItemScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => ItemA()),
+                                              builder: (context) => KatalkChoice()),
                                         );
                                       },
                                       style: TextButton.styleFrom(

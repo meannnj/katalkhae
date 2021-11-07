@@ -9,13 +9,12 @@ class CalendarDialog extends StatefulWidget {
 
 class _CalendarDialogState extends State<CalendarDialog> {
   String get currentDate => DateFormat('yyyy-MM-dd').format(DateTime.now());
+
   String get beforeOneYearDate => DateFormat('yyyy-MM-dd')
       .format(DateTime.now().subtract(Duration(days: 365)));
 
   DateTimeRange dateRange = DateTimeRange(
-  start: DateTime.now().subtract(Duration(days: 365)),
-  end: DateTime.now())
-  ;
+      start: DateTime.now().subtract(Duration(days: 365)), end: DateTime.now());
 
   String getFrom() {
     if (dateRange == null) {
@@ -67,66 +66,23 @@ class _CalendarDialogState extends State<CalendarDialog> {
                   child: ElevatedButton(
                       onPressed: () => pickDateRange(context),
                       child: Text(getUntil()))),
-              /*ElevatedButton(
-                onPressed: () {
-                  logger.i('currentDate: ' + currentDate,
-                      'beforeOneYearDate: ' + beforeOneYearDate);
-                  Future<DateTime?> future = showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now().subtract(Duration(days: 365)),
-                      firstDate: DateTime(
-                          DateTime.now().subtract(Duration(days: 365)).year),
-                      lastDate: DateTime(2030));
-                  future.then((date) {
-                    setState(() {
-                      _selectedDate = date!;
-                    });
-                  });
-                },
-                child: Text(
-                  currentDate,
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),*/
-              /*Text(
-                '-',
-                style: TextStyle(
-                  fontSize: 40,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Future<DateTime?> future = showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2020),
-                      lastDate: DateTime(2030));
-                },
-                child: Text(
-                  currentDate,
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),*/
             ],
           )
         ],
       ),
       actions: <Widget>[
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text(
-            'OK',
-            style: TextStyle(color: Colors.purpleAccent),
-          ),
-        ),
+        ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text(
+              '대화 해석을 시작할게요',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(primary: Colors.deepPurple)),
       ],
     );
   }
 
   Future pickDateRange(BuildContext context) async {
-
     // 날짜범위 초기화
     final initialDateRange = DateTimeRange(
       start: DateTime.now(),
@@ -147,4 +103,3 @@ class _CalendarDialogState extends State<CalendarDialog> {
     setState(() => dateRange = newDateRange);
   }
 }
-

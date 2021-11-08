@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:katalkhae/config/palette.dart';
 import 'package:katalkhae/helpers/logger.dart';
+import 'package:katalkhae/widget/katalk_list_button.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:katalkhae/widget/date_choice_dialog.dart';
 import 'dart:async';
-import 'dart:developer';
 import 'dart:io';
 
 class KatalkChoice extends StatelessWidget {
@@ -53,43 +53,11 @@ class KatalkChoice extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      ElevatedButton(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            Text('김민제님과의 카톡 대화',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text('저장한 날짜: 2021. 10. 01 오후 7:42',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 10,
-                                )),
-                          ],
-                        ),
-                        onPressed: () async {
-                          final result = await FilePicker.platform.pickFiles();
-                          if (result == null) return;
-                          final file = result.files.first;
-                        },
-                        style: ElevatedButton.styleFrom(
-                          //primary: Colors.black,
-                          minimumSize: const Size(390, 70),
-                          primary: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                            //side: BorderSide(color: Colors.red)
-                          ),
-                        ),
-                      ),
+
+
+                      KatalkListButton(),
+
+
                       SizedBox(
                         height: 15.0,
                       ),
@@ -108,9 +76,9 @@ class KatalkChoice extends StatelessWidget {
                         ),
                         onPressed: () {
                           showDialog<String>(
-                            context: context,
-                            builder: (BuildContext context) =>
-                                 CalendarDialog()
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  CalendarDialog()
                           );
                         },
                         style: ElevatedButton.styleFrom(

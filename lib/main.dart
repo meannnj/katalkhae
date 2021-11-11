@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:katalkhae/screens/main_screen.dart';
 import 'package:katalkhae/config/palette.dart';
+import 'package:katalkhae/screens/memory_screen.dart';
 import 'package:katalkhae/screens/more_screen.dart';
 import 'package:katalkhae/screens/result_screen.dart';
 import 'package:katalkhae/widget/bottom_bar.dart';
@@ -31,10 +32,8 @@ class MyApp extends StatelessWidget {
             children: [
               const ItemScreen(),
               //HomeScreen(),
-              const ResultScreen(),
-              const Center(
-                child: Text('save'),
-              ),
+              ResultScreen(),
+              MemoryScreen(),
               MoreScreen(),
             ],
           ),

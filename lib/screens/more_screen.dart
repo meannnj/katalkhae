@@ -1,82 +1,153 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_linkify/flutter_linkify.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:katalkhae/config/palette.dart';
 
 class MoreScreen extends StatelessWidget {
   //const MoreScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(top:50),
-              child: CircleAvatar(
-                radius: 100,
-                backgroundImage: AssetImage('images/glogo.png'),
-              ),
-            ),
-            Container(
-                padding: EdgeInsets.only(top:15),
-                child: Text(
-                  'Leo',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Colors.white
+    return Scaffold(
+      backgroundColor: Palette.backgroundColor, //Colors.white,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  child: Text(
+                    '설정',
+                    style: TextStyle(
+                      fontSize: 20,
+                      letterSpacing: 2.0,
+                      color: Colors.black, //Palette.mainColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 20,
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left:10),
+                  child: Column(
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        '앱 정보',
+                        style: TextStyle(
+                          color: Palette.disableColor,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          ),
+                      ),
+
+                      TextButton(
+                          onPressed: (){},
+                          child:const Padding(
+                          padding: EdgeInsets.only(top:10,bottom:10),
+                            child: Text(
+                              '앱 버전 1.00',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            //backgroundColor: Colors.white,
+                            primary: Colors.black,
+                          )
+                      ),
+                      TextButton(
+                          onPressed: (){},
+                          child:const Padding(
+                            padding: EdgeInsets.only(top:10,bottom:10),
+                            child: Text(
+                              '공유하기',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            //backgroundColor: Colors.white,
+                            //minimumSize: const Size(390, 40),
+                            primary: Colors.black,
+                          )
+                      ),
+                      TextButton(
+                          onPressed: (){},
+                          child: const Padding(
+                            padding: EdgeInsets.only(top:10,bottom:10),
+                            child: Text(
+                              '개인정보처리방침',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            //backgroundColor: Colors.white,
+                            primary: Colors.black,
+                          )
+                      ),
+
+                      const SizedBox(
+                        height: 15,
+                      ),
+
+                      const Text(
+                        '문의하기',
+                        style: TextStyle(
+                          color: Palette.disableColor,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      TextButton(
+                          onPressed: (){},
+                          child:const Padding(
+                            padding: EdgeInsets.only(top:10,bottom:10),
+                            child: Text(
+                              '이메일 문의하기',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            //backgroundColor: Colors.white,
+                            primary: Colors.black,
+                          )
+                      ),
+                    ],
                   ),
                 )
+              ],
             ),
-            Container(
-              padding: EdgeInsets.all(15),
-              width: 60,
-              height: 5,
-              color: Colors.red,
-            ),
-            // Container(
-            //   padding: EdgeInsets.all(10),
-            //   child: Linkify(
-            //     onOpen: (link) async {
-            //       if (await canLaunch(link.url)) {
-            //         await launch(link.url);
-            //       } else {
-            //         throw 'Could not launch $link';
-            //       }
-            //     },
-            //     text: "https://booupking.site",
-            //     style: TextStyle(
-            //       //color: Colors.white,
-            //       fontWeight: FontWeight.bold,
-            //       fontSize: 20,
-            //     ),
-            //     linkStyle: TextStyle(color: Colors.white),
-            //   ),
-            // ),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: ElevatedButton.icon(
-                icon: Icon(
-                  Icons.edit,
-                  color: Colors.white,
-                  // size: 30.0,
-                ),
-                label: Text('프로필 수정하기'),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  primary: Colors.white,
-                  minimumSize: Size(double.maxFinite, 30), //width, height
-                  // shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(10.0)),
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
+
+
+
+

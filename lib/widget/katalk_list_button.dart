@@ -35,16 +35,12 @@ class KatalkListButton extends StatelessWidget {
         ],
       ),
       onPressed: () async {
-        final result = await FilePicker.platform.pickFiles();
-        if (result == null) return;
-        final _file = result.files.first;
-        final _fileName = _file.name;
-        final _filePath = _file.path;
-        final lastFile = File('$_filePath/$_fileName');
-        String string = lastFile.readAsString() as String;
-        logger.i('내용 : ',string);
-
-        storage.readFile().then((onValue) { setState(() { message = onValue; }); });
+        final fileInfo = await FilePicker.platform.pickFiles();
+        if (fileInfo == null) return;
+        final _filePath = fileInfo.files.first.path;
+        final katalkFile = File('$_filePath');
+        final katalkContent = await katalkFile.readAsString();
+        logger.i('string : ',katalkContent);
 
       },
       style: ElevatedButton.styleFrom(

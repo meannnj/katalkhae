@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:katalkhae/helpers/logger.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'date_choice_dialog.dart';
+
 class KatalkListButton extends StatelessWidget {
   GlobalKey widgetKey = GlobalKey();
   late FilePickerCross filePickerCross;
@@ -40,8 +42,13 @@ class KatalkListButton extends StatelessWidget {
         final _filePath = fileInfo.files.first.path;
         final katalkFile = File('$_filePath');
         final katalkContent = await katalkFile.readAsString();
-        logger.i('string : ',katalkContent);
+        logger.i('카카오톡 내용 : ',katalkContent);
 
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) =>
+                CalendarDialog()
+        );
       },
       style: ElevatedButton.styleFrom(
         //primary: Colors.black,

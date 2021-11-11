@@ -53,43 +53,9 @@ class KatalkChoice extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-
-
                       KatalkListButton(),
-
-
                       SizedBox(
                         height: 15.0,
-                      ),
-                      ElevatedButton(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const <Widget>[
-                            Text('임시 분석시작 버튼',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                          ],
-                        ),
-                        onPressed: () {
-                          showDialog<String>(
-                              context: context,
-                              builder: (BuildContext context) =>
-                                  CalendarDialog()
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          //primary: Colors.black,
-                          minimumSize: const Size(390, 70),
-                          primary: Colors.deepPurpleAccent,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                            //side: BorderSide(color: Colors.red)
-                          ),
-                        ),
                       ),
                     ],
                   ),

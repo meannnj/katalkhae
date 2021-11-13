@@ -13,7 +13,7 @@ class ResultScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SafeArea(
-          child: Padding(
+          child: Container(
             padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,18 +48,19 @@ class ResultScreen extends StatelessWidget {
                                       '지난 1년 우리는 서로를 얼마나 사랑했을까?',
                                       style: TextStyle(
                                         color: Palette.mainColor,
-                                        fontSize: 12.0,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     SizedBox(
                                       height: 5.0,
                                     ),
+
                                     Text(
                                       'ver. 연인ㅣ레오,알리스',
                                       style: TextStyle(
                                         letterSpacing: 1.0,
-                                        fontSize: 10,
+                                        fontSize: 12,
                                         color: Palette.disableColor,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -71,7 +72,7 @@ class ResultScreen extends StatelessWidget {
                                       '2020.10.01 ~ 2021.10.01',
                                       style: TextStyle(
                                         //letterSpacing: 1.0,
-                                        fontSize: 10,
+                                        fontSize: 12,
                                         color: Palette.disableColor,
                                       ),
                                     ),

@@ -3,14 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:katalkhae/config/palette.dart';
 import 'analyze_katalk_choice.dart';
 
-class ItemScreen extends StatefulWidget {
-  const ItemScreen({Key? key}) : super(key: key);
+class MainScreen extends StatelessWidget {
+  //const ItemScreen({Key? key}) : super(key: key);
 
-  @override
-  _ItemScreenState createState() => _ItemScreenState();
-}
-
-class _ItemScreenState extends State<ItemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

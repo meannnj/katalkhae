@@ -12,7 +12,7 @@ class MoreScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SafeArea(
-          child: Padding(
+          child: Container(
             padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

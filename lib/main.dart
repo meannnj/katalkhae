@@ -30,8 +30,7 @@ class MyApp extends StatelessWidget {
           body: TabBarView(
             //physics: NeverScrollableScrollPhysics(),//손으로 좌우 스크롤하는걸 막는다
             children: [
-              const ItemScreen(),
-              //HomeScreen(),
+              MainScreen(),
               ResultScreen(),
               MemoryScreen(),
               MoreScreen(),

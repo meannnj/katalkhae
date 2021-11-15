@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Katalkhae',
       debugShowCheckedModeBanner: false, // debug 없애기
       theme: ThemeData(
+        //fontFamily: 'Noto_Sans_KR',
+        // 'Nanum_Gothic',
         primarySwatch: Palette.headerColor, //Colors.blue
       ),
       home: DefaultTabController(

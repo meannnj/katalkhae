@@ -78,6 +78,8 @@ class MainScreen extends StatelessWidget {
                                   const Text(
                                     '지난 1년 우리는 서로를 얼마나 사랑했을까?',
                                     style: TextStyle(
+                                      height: 1.3,
+                                      letterSpacing: 0,
                                       color: Colors.black,
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.bold,
@@ -89,10 +91,10 @@ class MainScreen extends StatelessWidget {
                                   const Text(
                                     'ver. 연인',
                                     style: TextStyle(
-                                      letterSpacing: 1.0,
+                                      letterSpacing: 0,
                                       fontSize: 15,
                                       color: Palette.disableColor,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
                                   const SizedBox(
@@ -101,9 +103,11 @@ class MainScreen extends StatelessWidget {
                                   const Text(
                                     '당신과 연인의 지난 1년간의 카카오톡 대화 내용을 분석하여 애정도 그래프 등 사랑의 관계를 해석해드립니다.',
                                     style: TextStyle(
-                                      //letterSpacing: 1.0,
+                                      height: 1.5,
+                                      letterSpacing: 0,
                                       fontSize: 15,
                                       color: Colors.black,
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
                                   const SizedBox(
@@ -127,7 +131,7 @@ class MainScreen extends StatelessWidget {
                                           //side: BorderSide(color: Colors.red)
                                         ),
                                       ),
-                                      child: const Text('카톡 해석하기')),
+                                      child: const Text('카톡 해석하기',style: TextStyle(fontSize: 15))),
                                   const SizedBox(
                                     height: 15,
                                   ),
@@ -143,7 +147,7 @@ class MainScreen extends StatelessWidget {
 
                     ElevatedButton(
                       onPressed: (){},
-                      child: const Text('계속 업로드 예정입니다. :)'),
+                      child: const Text('계속 업로드 예정입니다. :)',style: TextStyle(fontSize: 15)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(390,50),
                         primary: Colors.white, // background

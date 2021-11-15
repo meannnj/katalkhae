@@ -68,14 +68,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add fonts to your application, add an fonts section, like this:
   assets:
     - images/
+    - fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
-  # For details regarding adding assets from package dependencies, see
+  # For details regarding adding fonts from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
@@ -83,10 +84,31 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Noto_Sans_KR
+      fonts:
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Thin.otf
+          weight: 100
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Light.otf
+          weight: 300
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Regular.otf
+          weight: 400
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: fonts/Noto_Sans_KR/NotoSansKR-Black.otf
+          weight: 900
+
+    - family: Nanum_Gothic
+      fonts:
+        - asset: fonts/Nanum_Gothic/NanumGothic-Regular.ttf
+          weight: 100
+        - asset: fonts/Nanum_Gothic/NanumGothic-Bold.ttf
+          weight: 300
+        - asset: fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf
+          weight: 400
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

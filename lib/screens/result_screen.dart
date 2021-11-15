@@ -30,63 +30,123 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(top:15, bottom:15, left:10, right: 10),
+                      child: Container(
+                        padding: const EdgeInsets.only(
+                            top: 15, bottom: 15, left: 10, right: 10),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      '지난 1년 우리는 서로를 얼마나 사랑했을까?',
-                                      style: TextStyle(
-                                        color: Palette.mainColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
+                              Expanded(
+                                flex: 4,
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        '지난 1년 우리는 서로를 얼마나 사랑했을까?',
+                                        softWrap: true,
+                                        //overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          height: 1.3,
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 5.0,
-                                    ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const [
+                                          Text(
+                                            'ver. 연인',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                          Text(
+                                            ' ㅣ ',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                          Text(
+                                            '레오,알리스',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const [
+                                          Text(
+                                            '2020.10.01',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                          Text(
+                                            ' ~ ',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                          Text(
+                                            '2021.10.01',
+                                            style: TextStyle(
+                                              letterSpacing: 0,
+                                              fontSize: 13,
+                                              color: Palette.disableColor,
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ]),
+                              ),
 
-                                    Text(
-                                      'ver. 연인ㅣ레오,알리스',
-                                      style: TextStyle(
-                                        letterSpacing: 1.0,
-                                        fontSize: 12,
-                                        color: Palette.disableColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    Text(
-                                      '2020.10.01 ~ 2021.10.01',
-                                      style: TextStyle(
-                                        //letterSpacing: 1.0,
-                                        fontSize: 12,
-                                        color: Palette.disableColor,
-                                      ),
-                                    ),
+                              //const Spacer(flex:1),
 
-                                  ]),
-                              Container(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: AssetImage("images/item1.png")
-                                          ))),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: AssetImage(
+                                                "images/item1.png")))),
+                              ),
                             ]),
                       ),
                       style: ElevatedButton.styleFrom(

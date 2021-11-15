@@ -8,17 +8,15 @@ import 'package:file_picker/file_picker.dart';
 import 'package:katalkhae/widget/date_choice_dialog.dart';
 import 'dart:async';
 import 'dart:io';
+import 'dart:convert';
 
 class KatalkChoice extends StatelessWidget {
-  const KatalkChoice({Key? key}) : super(key: key);
 
   String get currentDate => DateFormat('yyyy-MM-dd').format(DateTime.now());
-
   String get beforeOneYearDate =>
       DateFormat('yyyy-MM-dd')
           .format(DateTime.now().subtract(Duration(days: 365)));
 
-  //const ScreenA({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

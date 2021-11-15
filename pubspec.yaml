@@ -32,6 +32,7 @@ dependencies:
   file_picker_cross: ^4.5.0
   logger:
   intl:
+  http:
   #permission_handler: ^5.0.1+1
   #app_settings: ^4.0.1+1
   flutter:

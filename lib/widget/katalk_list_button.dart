@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:flutter/material.dart';
+import 'package:katalkhae/helpers/API.dart';
 import 'package:katalkhae/helpers/logger.dart';
 import 'package:path_provider/path_provider.dart';
-
+import 'dart:convert';
 import 'date_choice_dialog.dart';
+import 'package:http/http.dart' as http;
 
 class KatalkListButton extends StatelessWidget {
   GlobalKey widgetKey = GlobalKey();
@@ -43,6 +45,8 @@ class KatalkListButton extends StatelessWidget {
         final katalkFile = File('$_filePath');
         final katalkContent = await katalkFile.readAsString();
         logger.i('카카오톡 내용 : ',katalkContent);
+
+        //final response = await http.get(url);
 
         showDialog<String>(
             context: context,

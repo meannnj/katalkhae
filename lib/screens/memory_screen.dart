@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:katalkhae/config/palette.dart';
+import 'package:katalkhae/items/my_memory.dart';
 
 class MemoryScreen extends StatelessWidget {
   //const MoreScreen({Key? key}) : super(key: key);
@@ -56,8 +57,8 @@ class MemoryScreen extends StatelessWidget {
                                 top: 15, bottom: 15, left: 15, right: 15),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  const Text(
+                                children: const [
+                                  Text(
                                     '알리스님과의 대화',
                                     style: TextStyle(
                                       color: Colors.black,
@@ -65,130 +66,22 @@ class MemoryScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 15,
                                   ),
-                                  TextButton(
-                                      onPressed: () {},
-                                      style: TextButton.styleFrom(
-                                        primary: Colors.black,
-                                        minimumSize: const Size(390, 40),
-                                        backgroundColor: Palette.talkColor,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          //side: BorderSide(color: Colors.red)
-                                        ),
-                                      ),
-                                      child: Flexible(
-                                        child: Container(
-                                            padding: const EdgeInsets.only(
-                                                left: 5, right: 5),
-                                            alignment: Alignment(-1, 0),
-                                            child: Text(
-                                                '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자')),
-                                      )),
-                                  const SizedBox(
-                                    height: 5,
+
+                                  MyMemory(
+                                    text: '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자',
+                                    target: '알리스',
+                                    date: '2020년 10월 1일 오전 11시 25분',
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const [
-                                        Text(
-                                          '알리스',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          ' ㅣ ',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          '2020년 10월 1일 오전 11시 25분',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+
+                                  MyMemory(
+                                    text: '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자',
+                                    target: '알리스',
+                                    date: '2020년 10월 1일 오전 11시 25분',
                                   ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  TextButton(
-                                      onPressed: () {},
-                                      style: TextButton.styleFrom(
-                                        primary: Colors.black,
-                                        minimumSize: const Size(390, 40),
-                                        backgroundColor: Palette.talkColor,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          //side: BorderSide(color: Colors.red)
-                                        ),
-                                      ),
-                                      child: Flexible(
-                                        child: Container(
-                                            padding: const EdgeInsets.only(
-                                                left: 5, right: 5),
-                                            alignment: Alignment(-1, 0),
-                                            child: Text(
-                                                '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자')),
-                                      )),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
-                                      children: const [
-                                        Text(
-                                          '알리스',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          ' ㅣ ',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          '2020년 10월 1일 오전 11시 25분',
-                                          style: TextStyle(
-                                            letterSpacing: 1.0,
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            //fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+
                                 ]),
                           ),
                         ],

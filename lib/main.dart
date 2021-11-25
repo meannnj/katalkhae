@@ -9,8 +9,16 @@ import 'package:katalkhae/screens/memory_screen.dart';
 import 'package:katalkhae/screens/more_screen.dart';
 import 'package:katalkhae/screens/result_screen.dart';
 import 'package:katalkhae/widget/bottom_bar.dart';
+import 'package:flutter/foundation.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+
+  runApp(MyApp());
+}
+//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

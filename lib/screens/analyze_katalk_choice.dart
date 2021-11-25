@@ -3,14 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:katalkhae/config/palette.dart';
 import 'package:katalkhae/helpers/logger.dart';
 import 'package:katalkhae/widget/katalk_list_button.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:katalkhae/widget/date_choice_dialog.dart';
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'dart:convert';
 
 const Map<String, String> UNIT_ID = kReleaseMode
     ? {
@@ -23,7 +17,6 @@ const Map<String, String> UNIT_ID = kReleaseMode
   //광고 샘플 https://developers.google.com/admob/android/test-ads?hl=ko
   //실제 'ca-app-pub-3016785609393816/8056818992',
 };
-import 'dart:convert';
 
 class KatalkChoice extends StatelessWidget {
   const KatalkChoice({Key? key}) : super(key: key);
@@ -41,6 +34,8 @@ class KatalkChoice extends StatelessWidget {
 
     //광고
     TargetPlatform os = Theme.of(context).platform;
+
+    //logger.i('os: $os');
 
     BannerAd banner = BannerAd(
       listener: AdListener(

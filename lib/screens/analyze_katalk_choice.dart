@@ -83,7 +83,7 @@ class KatalkChoice extends StatelessWidget {
                         child: Column(
                           children: [
                             KatalkListButton(),
-                            SizedBox(
+                            const SizedBox(
                               height: 15.0,
                             ),
                           ],
@@ -94,7 +94,7 @@ class KatalkChoice extends StatelessWidget {
                 ),
               ),
             ),
-              //광
+              //광고
               Container(
                 height: 50,
                 child: banner == null

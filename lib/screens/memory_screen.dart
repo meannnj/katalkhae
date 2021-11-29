@@ -4,7 +4,7 @@ import 'package:katalkhae/config/palette.dart';
 import 'package:katalkhae/items/my_memory.dart';
 
 class MemoryScreen extends StatelessWidget {
-  //const MoreScreen({Key? key}) : super(key: key);
+  const MemoryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

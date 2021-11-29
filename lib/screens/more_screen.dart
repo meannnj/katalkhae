@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:katalkhae/config/palette.dart';
+import 'package:katalkhae/screens/privacy_policy.dart';
 
 class MoreScreen extends StatelessWidget {
   //const MoreScreen({Key? key}) : super(key: key);
@@ -87,7 +88,13 @@ class MoreScreen extends StatelessWidget {
                           )
                       ),
                       TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => privacy()),
+                              );
+                            },
                           child: const Padding(
                             padding: EdgeInsets.only(top:10,bottom:10),
                             child: Text(

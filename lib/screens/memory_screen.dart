@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:katalkhae/config/palette.dart';
 import 'package:katalkhae/items/my_memory.dart';
-import 'package:katalkhae/screens/talkDetail_screen.dart';
+import 'package:katalkhae/screens/memory_moment_screen.dart';
 
 class MemoryScreen extends StatelessWidget {
   const MemoryScreen({Key? key}) : super(key: key);
@@ -76,7 +76,7 @@ class MemoryScreen extends StatelessWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => talkDetail()),
+                                              builder: (context) => MemoryMoment()),
                                         );
                                       },
                                         style: TextButton.styleFrom(

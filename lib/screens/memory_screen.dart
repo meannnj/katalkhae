@@ -89,14 +89,19 @@ class MemoryScreen extends StatelessWidget {
                                             //side: BorderSide(color: Colors.red)
                                           ),
                                         ),
-                                        child: Flexible(
-                                          child: Container(
-                                              padding: EdgeInsets.only(
-                                                  left: 5, right: 5),
-                                              alignment: Alignment(-1, 0),
-                                              child: Text(
-                                                  '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자')),
-                                        )),
+                                        child: Row(
+                                          children: [
+                                            Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자. 난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                          ]
+                                        )
+                                    ),
                                      SizedBox(
                                       height: 5,
                                     ),

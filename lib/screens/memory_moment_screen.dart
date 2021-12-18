@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:katalkhae/config/palette.dart';
 import 'package:favorite_button/favorite_button.dart';
 
-class talkDetail extends StatelessWidget {
+class MemoryMoment extends StatelessWidget {
   //const talkDetail({Key? key}) : super(key: key);
 
   @override
@@ -104,13 +104,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                      children: [
+                                        Flexible(
+                                        child: Container(
+                                            padding: EdgeInsets.only(
+                                                left: 5, right: 5),
+                                            alignment: Alignment(-1, 0),
+                                            child: Text(
+                                                '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                      ),
+                                      ]
                                     )),
                               ),
                               Expanded(
@@ -162,13 +166,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -222,13 +230,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -301,13 +313,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -361,13 +377,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -483,13 +503,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -540,13 +564,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -619,13 +647,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(
@@ -679,13 +711,17 @@ class talkDetail extends StatelessWidget {
                                         //side: BorderSide(color: Colors.red)
                                       ),
                                     ),
-                                    child: Flexible(
-                                      child: Container(
-                                          padding: EdgeInsets.only(
-                                              left: 5, right: 5),
-                                          alignment: Alignment(-1, 0),
-                                          child: Text(
-                                              '난 너를 알게되어서 난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                    child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Container(
+                                                padding: EdgeInsets.only(
+                                                    left: 5, right: 5),
+                                                alignment: Alignment(-1, 0),
+                                                child: Text(
+                                                    '난 너를 알게되어서 참 행복해 앞으로도 행복하자.')),
+                                          ),
+                                        ]
                                     )),
                               ),
                               Expanded(

@@ -30,13 +30,17 @@ class MyMemory extends StatelessWidget {
               //side: BorderSide(color: Colors.red)
             ),
           ),
-          child: Flexible(
-            child: Container(
-                padding: const EdgeInsets.only(
-                    left: 5, right: 5),
-                alignment: Alignment(-1, 0),
-                child: Text(
-                    text!)),
+          child: Row(
+            children: [
+              Flexible(
+              child: Container(
+                  padding: const EdgeInsets.only(
+                      left: 5, right: 5),
+                  alignment: Alignment(-1, 0),
+                  child: Text(
+                      text!)),
+            ),
+            ]
           )),
       const SizedBox(
         height: 5,

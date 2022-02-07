@@ -2,8 +2,9 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:katalkhae/screens/main_screen.dart';
 import 'package:katalkhae/config/palette.dart';
+import 'package:katalkhae/screens/main_talklist.dart';
+import 'package:katalkhae/screens/main_screen.dart';
 import 'package:katalkhae/screens/memory_screen.dart';
 import 'package:katalkhae/screens/more_screen.dart';
 import 'package:katalkhae/screens/result_screen.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Katalkhae',
+      title: 'FindVillain',
       debugShowCheckedModeBanner: false, // debug 없애기
       theme: ThemeData(
         //fontFamily: 'Noto_Sans_KR',
@@ -44,18 +45,21 @@ class MyApp extends StatelessWidget {
         primarySwatch: Palette.headerColor, //Colors.blue
       ),
       home: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
           body: TabBarView(
             //physics: NeverScrollableScrollPhysics(),//손으로 좌우 스크롤하는걸 막는다
             children: [
+              TalklistScreen(),
+              //카톡해 메뉴들
               MainScreen(),
               ResultScreen(),
               MemoryScreen(),
               MoreScreen(),
             ],
           ),
-          bottomNavigationBar: Bottom(),
+          //카톡해 하단바
+          //bottomNavigationBar: Bottom(),
         ),
       ),
     );

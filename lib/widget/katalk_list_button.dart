@@ -17,26 +17,36 @@ class KatalkListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          Text('김민제님과의 카톡 대화',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              )),
-          SizedBox(
-            height: 5.0,
-          ),
-          Text('저장한 날짜: 2021. 10. 01 오후 7:42',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 10,
-              )),
-        ],
+      child: Container(
+        padding:
+            const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text('김민제님과의 카톡 대화',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text('저장한 날짜: 2021. 10. 01 오후 7:42',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 10,
+                      )),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       onPressed: () async {
         final fileInfo = await FilePicker.platform.pickFiles();
@@ -44,15 +54,13 @@ class KatalkListButton extends StatelessWidget {
         final _filePath = fileInfo.files.first.path;
         final katalkFile = File('$_filePath');
         final katalkContent = await katalkFile.readAsString();
-        logger.i('카카오톡 내용 : ',katalkContent);
+        logger.i('카카오톡 내용 : ', katalkContent);
 
         //final response = await http.get(url);
 
         showDialog<String>(
             context: context,
-            builder: (BuildContext context) =>
-                CalendarDialog()
-        );
+            builder: (BuildContext context) => CalendarDialog());
       },
       style: ElevatedButton.styleFrom(
         //primary: Colors.black,

@@ -4,6 +4,7 @@ import 'package:katalkhae/config/palette.dart';
 import 'package:katalkhae/items/my_talk.dart';
 import 'package:katalkhae/screens/ad_screen.dart';
 import 'package:katalkhae/helpers/logger.dart';
+import 'package:katalkhae/screens/result_vil.dart';
 import 'package:katalkhae/widget/katalk_list_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -87,7 +88,13 @@ class TalklistScreen extends StatelessWidget {
                             MyTalk(
                               title: '한소희님, 송지아님 외 3명 카톡 대화',
                               date: '2021.10.01 오후 8:42',
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ResultVilScreen()),
+                                );
+                              },
                             ),
                             const SizedBox(
                               height: 15.0,

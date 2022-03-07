@@ -5,9 +5,23 @@ import 'package:katalkhae/items/my_talk.dart';
 import 'package:katalkhae/screens/ad_screen.dart';
 import 'package:katalkhae/helpers/logger.dart';
 import 'package:katalkhae/screens/result_vil.dart';
+import 'package:katalkhae/widget/date_choice_dialog.dart';
 import 'package:katalkhae/widget/katalk_list_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:file_picker_cross/file_picker_cross.dart';
+import 'package:katalkhae/helpers/API.dart';
+import 'package:katalkhae/helpers/logger.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:convert';
+//import 'date_choice_dialog.dart';
+import 'package:http/http.dart' as http;
+
+import 'guide_screen.dart';
 
 const Map<String, String> UNIT_ID = kReleaseMode
     ? {
@@ -54,8 +68,10 @@ class TalklistScreen extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           elevation: 0.0,
+
           backgroundColor: Palette.backgroundColor,
         ),
+
         body: Padding(
           padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
           child: Column(children: [
@@ -82,6 +98,30 @@ class TalklistScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             KatalkListButton(),
+
+                            const SizedBox(
+                              height: 15.0,
+                            ),
+
+                            MyTalk(
+                              title: '김민제님과의 카톡 대화',
+                              date: '2021. 10. 01 오후 7:42',
+                              onPressed: () async {
+                                // final fileInfo = await FilePicker.platform.pickFiles();
+                                // if (fileInfo == null) return;
+                                // final _filePath = fileInfo.files.first.path;
+                                // final katalkFile = File('$_filePath');
+                                // final katalkContent = await katalkFile.readAsString();
+                                // logger.i('카카오톡 내용 : ', katalkContent);
+
+                                //final response = await http.get(url);
+
+                                showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) => CalendarDialog());
+                              },
+                            ),
+
                             const SizedBox(
                               height: 15.0,
                             ),
@@ -117,22 +157,20 @@ class TalklistScreen extends StatelessWidget {
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold,
                                               )),
-                                          // SizedBox(
-                                          //   height: 5.0,
-                                          // ),
-                                          // Text('저장한 날짜: 2021. 10. 01 오후 7:42',
-                                          //     textAlign: TextAlign.left,
-                                          //     style: TextStyle(
-                                          //       color: Colors.black87,
-                                          //       fontSize: 10,
-                                          //     )),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              onPressed: () async {},
+                              onPressed: ()
+                                 {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                            builder: (context) => GuideScreen()),
+                            );
+                            },
                               style: ElevatedButton.styleFrom(
                                 //primary: Colors.black,
                                 minimumSize: const Size(390, 70),

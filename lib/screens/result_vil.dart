@@ -15,9 +15,13 @@ class ResultVilScreen extends StatelessWidget {
             '빌런 찾기 결과!',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+          centerTitle: false,
           elevation: 0.0,
           backgroundColor: Palette.backgroundColor,
+          automaticallyImplyLeading: false,
+          //leading: Container(),
         ),
+        //extendBodyBehindAppBar: true, // body 위에 appbar
         body: Container(
           //padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
           child: Column(children: [
@@ -151,7 +155,7 @@ class ResultVilScreen extends StatelessWidget {
 
             //하단 고정 버튼
             SizedBox(
-                height: 50,
+                height: 60,
                 width: double.maxFinite,
                 child: ElevatedButton(
                   onPressed: () {

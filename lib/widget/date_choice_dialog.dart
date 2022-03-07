@@ -38,16 +38,21 @@ class _CalendarDialogState extends State<CalendarDialog> {
       title: Column(
         children: [
           Text(
-            '김민제님과의 카카오톡 대화',
-            style: TextStyle(fontSize: 25),
+            '김민제님과의 카톡 대화',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 45,
+            height: 10,
           ),
           Text(
             '기간을 선택해주세요',
             style: TextStyle(fontSize: 14),
           ),
+
+          SizedBox(
+            height: 15,
+          ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -71,13 +76,21 @@ class _CalendarDialogState extends State<CalendarDialog> {
         ],
       ),
       actions: <Widget>[
-        ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text(
-              '대화 해석을 시작할게요',
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-            style: ElevatedButton.styleFrom(primary: Colors.deepPurple)),
+        SizedBox(
+          width: double.maxFinite,
+          child: ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text(
+                '분석하기',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurple,
+              )),
+        ),
       ],
     );
   }
